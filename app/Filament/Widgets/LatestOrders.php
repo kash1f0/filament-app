@@ -11,6 +11,9 @@ use App\Models\Order;
 
 class LatestOrders extends TableWidget
 {
+    protected static ?int $sort = 4;
+    protected int | string | array $columnSpan = 2;
+    
     public function table(Table $table): Table
     {
         return $table

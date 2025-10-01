@@ -6,6 +6,7 @@ use Filament\Widgets\ChartWidget;
 
 class TotalCustomers extends ChartWidget
 {
+    protected static ?int $sort = 3;
     protected ?string $heading = 'Total Customers';
 
     protected function getData(): array
