@@ -42,7 +42,6 @@ class LatestOrders extends TableWidget
                 ->label('Shipping Cost'),
                 TextColumn::make('open')
                 ->label('Open')
-                ->url(fn ($record) => $record.status),
             ])
             ->filters([
                 //
