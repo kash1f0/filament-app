@@ -42,7 +42,7 @@ class Products extends Model
         return $this->hasOne(Category::class);
     }
 
-     public function brand() : HasOne {
+    public function brand() : HasOne {
         return $this->hasOne(Brand::class);
     }
 

@@ -14,18 +14,18 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Clusters\Products\ProductsCluster;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use UnitEnum;
-
-
 
 class ProductsResource extends Resource
 {
-    protected static string | UnitEnum | null $navigationGroup = 'Shop';
-    
     protected static ?string $model = Products::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?string $recordTitleAttribute = 'Products';
+    
+    protected static ?string $cluster = ProductsCluster::class;
 
     public static function form(Schema $schema): Schema
     {
@@ -53,11 +53,11 @@ class ProductsResource extends Resource
         ];
     }
 
-    // public static function getRecordRouteBindingEloquentQuery(): Builder
-    // {
-    //     return parent::getRecordRouteBindingEloquentQuery()
-    //         ->withoutGlobalScopes([
-    //             SoftDeletingScope::class,
-    //         ]);
-    // }
+    public static function getRecordRouteBindingEloquentQuery(): Builder
+    {
+        return parent::getRecordRouteBindingEloquentQuery()
+            ->withoutGlobalScopes([
+                SoftDeletingScope::class,
+            ]);
+    }
 }
