@@ -18,12 +18,14 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->boolean('visibility')->nullable();
             $table->float('price')->nullable();
-            $table->string('sku')->nullable();
-            $table->string('cost_per_item')->nullable();
-            $table->string('compare_at_price')->nullable();
+            $table->integer('sku')->nullable();
+            $table->integer('cost_per_item')->nullable();
+            $table->integer('compare_at_price')->nullable();
             $table->string('barcode')->nullable();
             $table->integer('quantity')->nullable();
-            $table->string('security_stock')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained('categories');
+            $table->foreignId('brand_id')->nullable()->constrained('brands');
+            $table->integer('security_stock')->nullable();
             $table->boolean('can_return')->nullable();
             $table->boolean('can_ship')->nullable();
             $table->date('deleted_at')->nullable();

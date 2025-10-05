@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('number')->nullable();
             $table->string('status')->nullable();
             $table->date('order_date')->nullable();
-            $table->string('customer')->nullable();
+            $table->string('user_id')->nullable();
             $table->string('currency')->nullable();
             $table->string('total_price')->nullable();
             $table->string('shipping_cost')->nullable();

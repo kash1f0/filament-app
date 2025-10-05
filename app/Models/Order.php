@@ -17,6 +17,8 @@ class Order extends Model
         'shipping_cost',
     ];
     
-    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
     
 }

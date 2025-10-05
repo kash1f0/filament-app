@@ -24,7 +24,7 @@ class OrdersResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Orders';
     
-     protected static string | UnitEnum | null $navigationGroup = 'Shop';
+    protected static string | UnitEnum | null $navigationGroup = 'Shop';
 
     public static function form(Schema $schema): Schema
     {
@@ -55,7 +55,6 @@ class OrdersResource extends Resource
     protected function getHeaderWidgets(): array
     {
         return [
-            App\Livewire\OrdersOverview::class,
         ];
     }
 }
